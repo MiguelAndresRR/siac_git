@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background: linear-gradient(45deg, #d3cce3, #fdfbfb, #c0d6e4, #e0c3fc);
+    background-size: 300% 300%;
+    animation: color 13s ease-in-out infinite;
+    display: flex;
+    height: 100vh;
+}
+
+.layout {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+}
+
+.image-side,
+.form-side {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.image-side img {
+    max-width: 80%;
+    height: auto;
+    border-radius: 20px;
+}
+
+.container_login {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(0, 0, 0, 0.3);
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px 0 rgba(163, 117, 169, 0.759);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.headerlogin {
+    font-family: "Bebas Neue", sans-serif;
+    font-size: 40px;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+@keyframes color {
+    0% { background-position: 0% 50%; }
+    25% { background-position: 100% 50%; }
+    50% { background-position: 100% 50%; }
+    75% { background-position: 0% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@media (max-width: 768px) {
+    .layout {
+        flex-direction: column;
+    }
+
+    .image-side img {
+        max-width: 50%;
+    }
+
+    .headerlogin {
+        font-size: 32px;
+    }
+}
+
+
+.container_login button:hover {
+    background-color: #ffffff;
+    border-radius: 10px;
+    color: #000000;
+    transform: scale(1.05);
+    border: 2px solid #9e12e4;
+}
+.container_login button {
+    width: 100%;
+    transition: all 0.3s ease-in-out;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    outline: none;
+    background-color: black;
+}
+
+
+.container_login input {
+    border: 2px solid transparent;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.container_login input:focus {
+
+    border: 2px solid #9e12e4;
+    box-shadow: 0 0 5px #9e12e4;
+}
+
+.container_login select {
+    border: 2px solid transparent;
+    outline: none;
+    width: 100%;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.container_login select:focus {
+    border: 2px solid #9e12e4;
+    box-shadow: 0 0 5px #9e12e4;
+}
+.container_login select option {
+    background-color: #ffffff;
+    color: #000000;
+    font-size: 16px;
+    padding: 10px;
+    border-radius: 10px;
+}
