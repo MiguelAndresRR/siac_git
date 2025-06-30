@@ -13,6 +13,13 @@ document.addEventListener("DOMContentLoaded", function () {
             .then((res) => res.text())
             .then((html) => {
                 document.getElementById("tabla-productos").innerHTML = html;
+
+                if (typeof window.asignarEventosBotones === "function") {
+                    console.log("Reasignando eventos a .btn-ver");
+                    window.asignarEventosBotones();
+                } else {
+                    console.warn("No se encontró window.asignarEventosBotones");
+                }
             });
     }
 
@@ -23,12 +30,10 @@ document.addEventListener("DOMContentLoaded", function () {
         window.searchTimer = setTimeout(filtro, 50);
     });
 
-    document
-        .getElementById("limpiar-filtros")
-        .addEventListener("click", function () {
-            form.reset();
-            filtro();
-        });
+    document.getElementById("limpiar-filtros").addEventListener("click", function () {
+        form.reset();
+        filtro();
+    });
 
     document.addEventListener("click", function (e) {
         if (e.target.matches(".pagination a")) {
@@ -43,6 +48,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 .then((res) => res.text())
                 .then((html) => {
                     document.getElementById("tabla-productos").innerHTML = html;
+
+                    if (typeof window.asignarEventosBotones === "function") {
+                        console.log("Reasignando eventos a .btn-ver (paginación)");
+                        window.asignarEventosBotones();
+                    }
                 });
         }
     });
