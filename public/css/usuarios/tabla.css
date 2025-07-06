@@ -13,31 +13,15 @@ table {
     border-collapse: collapse;
     background-color: black;
 }
-/* Específico para columnas */
-th:nth-child(1),
-td:nth-child(1) {
-    width: 50px;
-} /* ID */
-th:nth-child(2),
-td:nth-child(2) {
-    width: 150px;
-} /* Producto */
-th:nth-child(3),
-td:nth-child(3) {
-    width: 100px;
-} /* Precio */
-th:nth-child(4),
-td:nth-child(4) {
-    width: 120px;
-} /* Categoría */
-th:nth-child(5),
-td:nth-child(5) {
-    width: 120px;
-} /* Unidad */
-th:nth-child(6),
-td:nth-child(6) {
-    width: 100px;
-}
+th:nth-child(1), td:nth-child(1) { width: 50px; }    /* ID */
+th:nth-child(2), td:nth-child(2) { width: 120px; }   /* Usuario */
+th:nth-child(3), td:nth-child(3) { width: 120px; }   /* Rol */
+th:nth-child(4), td:nth-child(4) { width: 150px; }   /* Nombres */
+th:nth-child(5), td:nth-child(5) { width: 150px; }   /* Apellidos */
+th:nth-child(6), td:nth-child(6) { width: 200px; }   /* Correo */
+th:nth-child(7), td:nth-child(7) { width: 130px; }   /* Teléfono */
+th:nth-child(8), td:nth-child(8) { width: 130px; }   /* Documento */
+th:nth-child(9), td:nth-child(9) { width: 100px; }   /* Botones */
 tbody {
     background-color: #ffffff;
     color: #000000;
@@ -158,4 +142,10 @@ table {
     position: sticky;
     top: 0;
     z-index: 1;
+}
+td#botones {
+    min-width: 150px;
+}
+#botones button {
+    box-sizing: border-box;
 }

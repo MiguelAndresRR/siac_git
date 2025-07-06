@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\ProductoController;
+use App\Http\Controllers\UsuarioController;
 
 Route::middleware('prevent-back')->group(function () {
     Route::redirect('/', 'login');
@@ -14,12 +15,8 @@ Route::middleware('prevent-back')->group(function () {
             Route::get('/dashboard', function () {
                 return view('admin.dashboard');
             })->name('dashboard');
-
-            Route::get('/productos', [ProductoController::class, 'index'])->name('productos.index');
+            Route::get('productos', [ProductoController::class, 'index']);
         });
-        Route::get('/user/dashboard', function () {
-            return view('user.dashboard');
-        })->name('user.dashboard');
         // Mostrar la lista de productos
         Route::get('admin/productos/index', [ProductoController::class, 'index'])->name('admin.productos.index');
         // Formulario para crear un nuevo producto
@@ -36,5 +33,14 @@ Route::middleware('prevent-back')->group(function () {
         Route::delete('admin/productos/{producto}', [ProductoController::class, 'destroy'])->name('admin.productos.destroy');
         // Logout
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+
+        //usuarios
+        Route::get('admin/usuarios/index', [UsuarioController::class, 'index'])->name('admin.usuarios.index');
+        // Crear usuario
+        Route::get('admin/usuarios/create', [UsuarioController::class, 'create'])->name('admin.usuarios.create');
+        // Guardar nuevo producto (form create)
+        Route::post('admin/usuarios/index', [UsuarioController::class, 'store'])->name('admin.usuarios.store');
+        // Eliminar usuario
+        Route::delete('admin/usuarios/{usuario}', [UsuarioController::class, 'destroy'])->name('admin.usuarios.destroy');
     });
 });
