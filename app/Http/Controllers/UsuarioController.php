@@ -9,6 +9,7 @@ use App\Models\Rol;
 
 class UsuarioController extends Controller
 {
+    
     public function index(Request $request)
     {
         $query = User::query();
@@ -42,7 +43,8 @@ class UsuarioController extends Controller
             'telefono_usuario' => 'required|digits_between:6,10',
             'nombre_usuario' => 'required|string|max:50',
             'apellido_usuario' => 'required|string|max:50',
-            'correo_usuario' => 'required|string|email|max:100' //necesito mirar que me registre con @ o .
+            'correo_usuario' => 'required|string|email|max:100',
+            'id_rol' => 'required|exists:rol,id_rol'
         ]);
 
         $request->merge([
@@ -54,7 +56,7 @@ class UsuarioController extends Controller
             ->where('telefono_usuario', $request->telefono_usuario)
             ->where('correo_usuario', $request->correo_usuario)
             ->where('user', $request->user)
-            ->where('id_usuario', '!=', $usuario->id_usuario ?? null)
+            ->where('id_usuario', '!=', $usuario->id_usuario)
             ->first();
 
         if ($existingUsuario) {

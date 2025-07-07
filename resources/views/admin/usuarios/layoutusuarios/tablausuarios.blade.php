@@ -55,6 +55,6 @@
     </table>
 </div>
 <div class="paginacion">
-@include('admin.usuarios.layoutusuarios.paginacion')
+    @include('admin.usuarios.layoutusuarios.paginacion')
 </div>
 <script src="{{ asset('js/usuarios/borrar.js') }}"></script>

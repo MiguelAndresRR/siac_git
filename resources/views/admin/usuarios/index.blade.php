@@ -43,7 +43,7 @@
         @endif
     </div>
     @include('admin.layout.sidebar')
-    <div class="content-productos">
+    <div class="content-usuarios">
         <div class="header">
             <h1><i class="fa-solid fa-users"></i>Usuarios</h1>
         </div>
