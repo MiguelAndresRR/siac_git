@@ -40,6 +40,9 @@ Route::middleware('prevent-back')->group(function () {
         Route::get('admin/usuarios/create', [UsuarioController::class, 'create'])->name('admin.usuarios.create');
         // Guardar nuevo producto (form create)
         Route::post('admin/usuarios/index', [UsuarioController::class, 'store'])->name('admin.usuarios.store');
+        // Mostrar el formulario de edición
+        Route::get('admin/usuarios/index/{usuario}', [UsuarioController::class, 'edit'])->name('admin.usuarios.edit');
+        // Actualizar usuario (form edit)
         // Eliminar usuario
         Route::delete('admin/usuarios/{usuario}', [UsuarioController::class, 'destroy'])->name('admin.usuarios.destroy');
     });

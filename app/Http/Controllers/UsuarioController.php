@@ -9,7 +9,7 @@ use App\Models\Rol;
 
 class UsuarioController extends Controller
 {
-    
+
     public function index(Request $request)
     {
         $query = User::query();
@@ -85,12 +85,12 @@ class UsuarioController extends Controller
         // ]);
     }
 
-    public function edit(User $producto)
+    public function edit(User $usuarios)
     {
-        // $categorias = Categoria::all();
-        // $unidades = Unidad::all();
+        $usuarios = User::all();
+        $roles = Rol::all();
 
-        // return view('admin.productos.index', compact('productos', 'categorias', 'unidades'));
+        return view('admin.usuarios.index', compact('usuarios', 'roles'));
     }
 
     public function update(Request $request, User $producto)

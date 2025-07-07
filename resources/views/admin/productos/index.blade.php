@@ -53,7 +53,7 @@
         </div>
     </div>
     @include('admin.productos.modal.edit')
-    @include('admin.productos.modal.mostrar')
+    {{-- @include('admin.productos.modal.mostrar') --}}
     @include('admin.productos.modal.create')
 </body>
 </html>

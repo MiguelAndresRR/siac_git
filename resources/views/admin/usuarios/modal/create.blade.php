@@ -34,12 +34,9 @@
                         maxlength="50" required>
                     <label for="password" class="form-label"><i class="fa-solid fa-lock"></i> Contraseña</label>
                     <input type="password" class="form-control" id="password" name="password" placeholder="Contraseña"
-                        required
-                        minlength="8"
-                        maxlength="60"
+                        required minlength="8" maxlength="60"
                         pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
-                        title="Debe contener al menos una letra mayúscula, un carácter especial y mínimo 8 caracteres."
-                        >
+                        title="Debe contener al menos una letra mayúscula, un carácter especial y mínimo 8 caracteres.">
                     <label for="id_rol" class="form-label"><i class="fa-solid fa-user-tag"></i> Rol</label>
                     <select name="id_rol" id="id_rol" class="form-control" required>
                         <option value="" disabled {{ old('id_rol') ? '' : 'selected' }}>
@@ -55,8 +52,8 @@
             </div>
             <br>
             <button type="submit" class="btn btn-success">Crear</button>
-            <button type="button" class="btn btn-secondary" id="ocultar-modal-crear">Cancelar</button>
         </form>
+        <button type="button" class="btn btn-secondary" id="ocultar-modal-crear">Cancelar</button>
     </div>
 </div>
 

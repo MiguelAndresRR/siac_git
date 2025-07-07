@@ -45,7 +45,8 @@
 
             <button type="submit">Crear</button>
         </form>
-        <button type="submit" class="btn" id='ocultar-modal-crear'>Cancelar</button>
+        <button type="button" class="btn" id="ocultar-modal-crear">Cancelar</button>
+
     </div>
 </div>
 <script src="{{ asset('js/productos/crear.js') }}"></script>
