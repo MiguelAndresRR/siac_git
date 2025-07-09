@@ -30,14 +30,14 @@
                     <td>{{$usuario->telefono_usuario}}</td>
                     <td>{{$usuario->documento_usuario}}</td>
                     <td id="botones">
-                        <button type="button" class="btn-ver" data-id_producto="{{ $usuario->id_usuario}}">
+                        <button type="button" class="btn-ver" id="btn-ver1" data-id_usuario="{{ $usuario->id_usuario}}">
                             <i class="fa-solid fa-eye"></i>
                         </button>
-                        <button type="button" class="btn-editar" data-id_producto="{{ $usuario->id_usuario}}">
+                        <button type="button" class="btn-editar" id="btn-editar1" data-id_usuario="{{$usuario->id_usuario}}">
                             <i class="fa-solid fa-pen-to-square"></i>
                         </button>
                         <button type="button" class="borrar-boton btn btn-danger"
-                            data-id_usuario="{{ $usuario->id_usuario }}">
+                            data-id_usuario="{{ $usuario->id_usuario}}">
                             <i class="fa-solid fa-trash"></i>
                         </button>
                         @if ($usuario->id_usuario)

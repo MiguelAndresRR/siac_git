@@ -1,4 +1,4 @@
-<div class="container-modal-crear">
+<div class="container-modal-crear" >
     <div class="registrar-usuario-container">
         <h2>Registrar usuario</h2>
         <form action="{{ route('admin.usuarios.store') }}" method="POST" enctype="multipart/form-data"
@@ -53,7 +53,7 @@
             <br>
             <button type="submit" class="btn btn-success">Crear</button>
         </form>
-        <button type="button" class="btn btn-secondary" id="ocultar-modal-crear">Cancelar</button>
+        <button type="close" class="btn btn-secondary" id="ocultar-modal-crear1">Cancelar</button>
     </div>
 </div>
 

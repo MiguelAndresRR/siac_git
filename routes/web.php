@@ -43,6 +43,9 @@ Route::middleware('prevent-back')->group(function () {
         // Mostrar el formulario de edición
         Route::get('admin/usuarios/index/{usuario}', [UsuarioController::class, 'edit'])->name('admin.usuarios.edit');
         // Actualizar usuario (form edit)
+        Route::get('admin/usuarios/{usuario}', [UsuarioController::class, 'show'])->name('admin.usuarios.show');
+        // Actualiza usuario
+        Route::put('admin/usuarios/{usuario}', [UsuarioController::class, 'update'])->name('admin.usuarios.update');
         // Eliminar usuario
         Route::delete('admin/usuarios/{usuario}', [UsuarioController::class, 'destroy'])->name('admin.usuarios.destroy');
     });

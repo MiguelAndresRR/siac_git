@@ -1,7 +1,7 @@
-<div class="container-modal-editar">
+<div class="container-modal-editar" id="container-modal-editar2" >
     <div class="modificar-producto-container">
         <h2>Modificar usuario</h2>
-        <form id="form_editar" method="POST" enctype="multipart/form-data" action="">
+        <form id="form_editar1" method="POST" enctype="multipart/form-data" action="">
             @csrf
             @method('PUT')
             <div class="contenedor-doble">
@@ -16,6 +16,7 @@
                     <input type="text" class="form-control" id="apellido_usuario" name="apellido_usuario"
                         value="{{ old('apellido_usuario') }}" placeholder="Apellido"
                         maxlength="50" required>
+                        
                     <label for="documento_usuario" class="form-label"><i class="fa-solid fa-id-card"></i>
                         Documento</label>
                     <input type="number" class="form-control" id="documento_usuario" name="documento_usuario"
@@ -43,6 +44,7 @@
                         value="{{ old('password') }}" required minlength="8" maxlength="60"
                         pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}"
                         title="Debe contener al menos una letra mayúscula, un carácter especial y mínimo 8 caracteres.">
+
                     <label for="id_rol" class="form-label"><i class="fa-solid fa-user-tag"></i> Rol</label>
                     <select name="id_rol" id="id_rol" class="form-control" required>
                         <option value="" disabled {{ old('id_rol') ? '' : 'selected' }}>
@@ -59,7 +61,8 @@
             </div>
             <br>
             <button type="submit" class="btn btn-success">Crear</button>
-            <button type="button" class="btn btn-secondary" id="ocultar-modal-crear">Cancelar</button>
+            <p class="error" id="errorMessage"></p>
+            <button type="button" class="btn btn-secondary" id="ocultar-modal-editar2">Cancelar</button>
         </form>
     </div>
 </div>

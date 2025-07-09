@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     const btnAbrirModal = document.querySelector("#crear-modal");
-    const btnCerrarModal = document.querySelector("#ocultar-modal-crear");
+    const btnCerrarModal = document.querySelector("#ocultar-modal-crear1");
     const contModal = document.querySelector(".container-modal-crear");
 
     // Abre el modal
